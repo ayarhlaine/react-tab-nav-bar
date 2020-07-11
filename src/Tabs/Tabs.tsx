@@ -1,6 +1,4 @@
 import React,{ FC } from 'react';
-
-import Paper from '@material-ui/core/Paper';
 import {Tabs as MaterialTabs} from '@material-ui/core';
 import Tab from '@material-ui/core/Tab';
 import './Tabs.scss';
