@@ -1,5 +1,9 @@
 # react-tab-nav-bar
-React JS Nav Bar ( Material UI)
+React JS Tab Nav Bar ( Material UI)
+
+[![jest](https://jestjs.io/img/jest-badge.svg)](https://github.com/facebook/jest)
+
+[![Build Status](https://travis-ci.com/devayarhlaine/react-tab-nav-bar.svg?branch=master&service=github)](https://travis-ci.com/devayarhlaine/react-tab-nav-bar)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
