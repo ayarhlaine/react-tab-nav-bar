@@ -1,9 +1,12 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import App from './App';
-
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+import { shallow, ShallowWrapper} from 'enzyme';
+import { App } from './App';
+describe('App', () => {
+let subject: ShallowWrapper;
+  beforeEach(() => {
+    subject = shallow(<App />);
+  });
+  it('should be div', () => {
+    expect(subject.type()).toBe('div');
+  });
 });
