@@ -1,9 +1,9 @@
 import React,{ FC } from 'react';
-
+import NavBar from './NavBar/NavBar';
 export const App:FC<{}> = () => {
   return (
     <div className="App">
-      App
+      <NavBar />
     </div>
   );
 }

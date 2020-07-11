@@ -1,0 +1,11 @@
+.ViewSelect{
+    margin-right: 1rem;
+    .ViewSelect__select{
+        padding-left: 1rem;
+        .ViewSelect__dialog{
+            .ViewSelect__MenuItem{
+                align-items: flex-end;
+            }
+        }
+    }
+}
