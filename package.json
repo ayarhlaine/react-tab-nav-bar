@@ -1,7 +1,8 @@
 {
-  "name": "react-app-template-type-script",
+  "name": "react-tab-nav-bar",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://devayarhlaine.github.io/react-tab-nav-bar",
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@testing-library/jest-dom": "^4.2.4",
@@ -21,6 +22,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:coverage": "npm test -- --coverage",
+    "test:coveralls": "npm test -- --coverage && coveralls < coverage/lcov.info",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
