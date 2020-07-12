@@ -3,8 +3,8 @@ import {Tabs as MaterialTabs} from '@material-ui/core';
 import Tab from '@material-ui/core/Tab';
 import './Tabs.scss';
 export const Tabs:FC<{}> = () => {
-  const [value, setValue] = React.useState(2);
-  const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
+  const [value, setValue] = React.useState('home');
+  const handleChange = (event: React.ChangeEvent<{}>, newValue: string) => {
     setValue(newValue);
   };
   return (
@@ -16,9 +16,9 @@ export const Tabs:FC<{}> = () => {
             onChange={handleChange}
             aria-label="disabled tabs example"
         >
-            <Tab label="Home" />
-            <Tab label="Projects" />
-            <Tab label="About" />
+            <Tab label="Home" value={'home'}/>
+            <Tab label="Projects" value={'projects'} />
+            <Tab label="About" value={'about'}/>
         </MaterialTabs>
   );
 }
