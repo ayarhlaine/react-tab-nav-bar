@@ -1,11 +1,20 @@
 import React, { FC } from 'react';
+import { connect } from 'react-redux';
+import { Dispatch, bindActionCreators } from 'redux';
+import { AppState } from '../store';
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
+import { updateActiveViewAction } from '../NavBar/NavBar.dux';
 import './ViewSelect.scss';
-export const ViewSelect: FC<{}> = () => {
-    const [view, setView] = React.useState('normal');
+export interface ViewSelectProp {
+    activeView: string;
+    actions: {
+        updateActiveViewAction: typeof updateActiveViewAction;
+    }
+}
+export const ViewSelect: FC<ViewSelectProp> = ({ activeView, actions }) => {
     const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
-        setView(event.target.value as string);
+        actions.updateActiveViewAction(event.target.value as string);
     };
     return (
         <div className={'ViewSelect'}>
@@ -13,7 +22,7 @@ export const ViewSelect: FC<{}> = () => {
              className={'ViewSelect__select'}
             labelId="demo-simple-select-label"
             id="demo-simple-select"
-            value={view}
+            value={activeView}
             disableUnderline
             MenuProps={{MenuListProps: {disablePadding: true}, classes: {paper: 'ViewSelect__dialog'}}}
             onChange={handleChange}
@@ -24,4 +33,19 @@ export const ViewSelect: FC<{}> = () => {
         </div>
     )
 }
-export default ViewSelect;
+const mapStateToProps = (appState: AppState) => {
+    return {
+        activeView: appState.navBar.activeView
+    }
+  }
+  
+  const mapDispatchToProps = (dispatch: Dispatch) => ({
+    actions: {
+      ...bindActionCreators({ updateActiveViewAction }, dispatch),
+    }
+  });
+  
+  export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(ViewSelect);
