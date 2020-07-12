@@ -36,4 +36,3 @@ export default connect(
   mapStateToProps,
   null
 )(Page);
-// export default Page;
