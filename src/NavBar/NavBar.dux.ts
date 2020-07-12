@@ -1,5 +1,5 @@
 import { action, createReducer} from 'typesafe-actions';
-export const updateActiveTabAction = (activeTab: string) => action('navBar/UPDATE_ACTIVE_TAB', { activeTab });
+export const updateActiveTabAction = (activeTab: string) => action('navBar/UPDATE_ACTIVE_TAB', activeTab);
 export interface NavBarState {
     activeTab: string;
     isAdvanceView: boolean;

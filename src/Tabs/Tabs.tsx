@@ -1,19 +1,29 @@
 import React,{ FC } from 'react';
+import { connect } from 'react-redux';
+import { Dispatch, bindActionCreators } from 'redux';
+import { AppState } from '../store';
 import {Tabs as MaterialTabs} from '@material-ui/core';
 import Tab from '@material-ui/core/Tab';
+import { updateActiveTabAction } from '../NavBar/NavBar.dux';
 import './Tabs.scss';
-export const Tabs:FC<{}> = () => {
-  const [value, setValue] = React.useState('home');
-  const handleChange = (event: React.ChangeEvent<{}>, newValue: string) => {
-    setValue(newValue);
-  };
+export interface TabsProp {
+  activeTab: string;
+  actions: {
+    updateActiveTabAction: typeof updateActiveTabAction;
+  }
+}
+export const Tabs:FC<TabsProp> = (
+  {
+    activeTab, actions,
+  }
+) => {
   return (
         <MaterialTabs
             className={'Tabs'}
-            value={value}
+            value={activeTab}
             indicatorColor="primary"
             textColor="primary"
-            onChange={handleChange}
+            onChange={(_, activeTab: string) => actions.updateActiveTabAction(activeTab)}
             aria-label="disabled tabs example"
         >
             <Tab label="Home" value={'home'}/>
@@ -22,5 +32,20 @@ export const Tabs:FC<{}> = () => {
         </MaterialTabs>
   );
 }
+const mapStateToProps = (appState: AppState) => {
+  return {
+    activeTab: appState.navBar.activeTab
+  }
+}
 
-export default Tabs;
+const mapDispatchToProps = (dispatch: Dispatch) => ({
+  actions: {
+    ...bindActionCreators({ updateActiveTabAction }, dispatch),
+  }
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Tabs);
+

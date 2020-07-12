@@ -1,11 +1,11 @@
 import React,{ FC } from 'react';
 import NavBar from './NavBar/NavBar';
-import Home from './Home/Home';
+import Page from './Page/Page';
 export const App:FC<{}> = () => {
   return (
     <div className="App">
       <NavBar />
-      <Home />
+      <Page />
     </div>
   );
 }
