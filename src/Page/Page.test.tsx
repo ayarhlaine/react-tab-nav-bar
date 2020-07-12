@@ -1,7 +1,8 @@
 import React from 'react';
 import { shallow, ShallowWrapper} from 'enzyme';
+import { AppState } from '../store';
 import Paper from '@material-ui/core/Paper';
-import { Page } from './Page';
+import { Page, mapStateToProps } from './Page';
 describe('Page', () => {
 let subject: ShallowWrapper;
 const defaultProp = {
@@ -25,6 +26,16 @@ const defaultProp = {
         it('should render activeTab text', () => {
             expect(subject.childAt(0).childAt(0).text()).toBe(defaultProp.activeTab.toUpperCase());
         });
+    });
+  });
+  describe('mapStateToProps', () => {
+    const appState = {
+        navBar: {
+            activeTab: 'home',
+        },
+    } as unknown as AppState;
+    it('set activeTab', () => {
+        expect(mapStateToProps(appState).activeTab).toBe('home');
     });
   });
 });

@@ -27,7 +27,7 @@ export const Page: FC<PagePropNull> = ( { activeTab }) => {
         </div>
     )
 }
-const mapStateToProps = (appState: AppState) => {
+export const mapStateToProps = (appState: AppState) => {
   return {
     activeTab: appState.navBar.activeTab
   }
