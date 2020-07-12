@@ -1,0 +1,26 @@
+.Footer {
+    width: 100%;
+    .Source{
+        display: flex;
+        margin-bottom: 1rem;
+        .left {
+            padding: 1rem;
+            width: 30%;
+        }
+        .Github__Link {
+            padding: 1rem;
+            width: 70%;
+        }
+    }
+    .Status, .Test, .Coverage{
+        display: flex;
+        .left{
+            padding: 1rem;
+            width: 30%;
+        }
+        .Covearge__Status, .Build__Status, .Tested__With__Jest{
+            padding: 1rem;
+            width: 70%;
+        }
+    }
+}
