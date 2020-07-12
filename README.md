@@ -3,12 +3,12 @@ React JS Tab Nav Bar ( Material UI)
 
 [![jest](https://jestjs.io/img/jest-badge.svg)](https://github.com/facebook/jest)
 
-[![Build Status](https://travis-ci.com/devayarhlaine/react-tab-nav-bar.svg?branch=master&service=github)](https://travis-ci.com/devayarhlaine/react-tab-nav-bar)
+[![Build Status](https://travis-ci.com/ayarhlaine/react-tab-nav-bar.svg?branch=master)](https://travis-ci.com/ayarhlaine/react-tab-nav-bar)
 
-[![Coverage Status](https://coveralls.io/repos/github/devayarhlaine/react-tab-nav-bar/badge.svg?branch=master)](https://coveralls.io/github/devayarhlaine/react-tab-nav-bar?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/ayarhlaine/react-tab-nav-bar/badge.svg?branch=master)](https://coveralls.io/github/ayarhlaine/react-tab-nav-bar?branch=master)
 
 # Demo Link
-https://devayarhlaine.github.io/react-tab-nav-bar
+https://ayarhlaine.github.io/react-tab-nav-bar
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -54,7 +54,7 @@ I will make safe master brand.
 Note : I generally don't accept pull requests that are untested, or break the build.
 
 ### Issues
-https://github.com/devayarhlaine/react-tab-nav-bar/issues
+https://github.com/ayarhlaine/react-tab-nav-bar/issues
 
 
 Happy Coding!
