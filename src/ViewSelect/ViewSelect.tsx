@@ -4,17 +4,17 @@ import { Dispatch, bindActionCreators } from 'redux';
 import { AppState } from '../store';
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
-import { updateActiveViewAction } from '../NavBar/NavBar.dux';
+import { changeAdvancedView } from '../changeAdvancedView/changeAdvancedView';
 import './ViewSelect.scss';
 export interface ViewSelectProp {
     activeView: string;
     actions: {
-        updateActiveViewAction: typeof updateActiveViewAction;
+      changeAdvancedView: typeof changeAdvancedView;
     }
 }
 export const ViewSelect: FC<ViewSelectProp> = ({ activeView, actions }) => {
     const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
-        actions.updateActiveViewAction(event.target.value as string);
+        actions.changeAdvancedView(event.target.value as string);
     };
     return (
         <div className={'ViewSelect'}>
@@ -41,7 +41,7 @@ const mapStateToProps = (appState: AppState) => {
   
   const mapDispatchToProps = (dispatch: Dispatch) => ({
     actions: {
-      ...bindActionCreators({ updateActiveViewAction }, dispatch),
+      ...bindActionCreators({ changeAdvancedView }, dispatch),
     }
   });
   

@@ -8,13 +8,14 @@ import { updateActiveTabAction } from '../NavBar/NavBar.dux';
 import './Tabs.scss';
 export interface TabsProp {
   activeTab: string;
+  activeView: string;
   actions: {
     updateActiveTabAction: typeof updateActiveTabAction;
   }
 }
 export const Tabs:FC<TabsProp> = (
   {
-    activeTab, actions,
+    activeTab, activeView, actions,
   }
 ) => {
   return (
@@ -29,12 +30,17 @@ export const Tabs:FC<TabsProp> = (
             <Tab label="Home" value={'home'}/>
             <Tab label="Projects" value={'projects'} />
             <Tab label="About" value={'about'}/>
+            {
+              activeView === 'advanced' && 
+              <Tab label="System Setting" value={'system setting'}/>
+            }
         </MaterialTabs>
   );
 }
 const mapStateToProps = (appState: AppState) => {
   return {
-    activeTab: appState.navBar.activeTab
+    activeTab: appState.navBar.activeTab,
+    activeView: appState.navBar.activeView
   }
 }
 
