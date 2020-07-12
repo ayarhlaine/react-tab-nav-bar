@@ -28,8 +28,14 @@ export const Tabs:FC<TabsProp> = (
             aria-label="disabled tabs example"
         >
             <Tab label="Home" value={'home'}/>
-            <Tab label="Projects" value={'projects'} />
-            <Tab label="About" value={'about'}/>
+            {
+              activeView === 'normal' && 
+              <Tab label="Projects" value={'projects'} />
+            }
+            {
+              activeView === 'normal' && 
+              <Tab label="About" value={'about'}/>
+            }
             {
               activeView === 'advanced' && 
               <Tab label="System Setting" value={'system setting'}/>
