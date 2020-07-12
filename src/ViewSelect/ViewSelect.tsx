@@ -33,7 +33,7 @@ export const ViewSelect: FC<ViewSelectProp> = ({ activeView, actions }) => {
         </div>
     )
 }
-const mapStateToProps = (appState: AppState) => {
+export const mapStateToProps = (appState: AppState) => {
     return {
         activeView: appState.navBar.activeView
     }
