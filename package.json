@@ -53,5 +53,18 @@
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "redux-devtools-extension": "^2.13.8"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "**/*.{ts,tsx}",
+      "!**/node_modules/**",
+      "!**/coverage/**",
+      "!**/serviceWorker.ts",
+      "!**/store/index.ts",
+      "!**/index.tsx",
+      "!**/react-app-env.d.ts",
+      "module.d.ts",
+      "react-app-env.d.ts"
+    ]
   }
 }
